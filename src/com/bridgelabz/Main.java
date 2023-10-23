@@ -11,11 +11,16 @@ public class Main {
             int output=(int)(Math.random() * 6) + 1;
             System.out.println("The dice number is: "+ output);
             int option = (int) Math.floor(Math.random() * 10) % 3;
+
             if (option == LADDER)
             {
-                playerPosition = playerPosition + output;
-                System.out.println("Your status is ladder");
-                System.out.println("Your position is :" + playerPosition);
+                if (playerPosition + output <= 100)
+                {
+                    playerPosition = playerPosition + output;
+                    System.out.println("Your status is Ladder");
+
+                    System.out.println("Your Position is :" + playerPosition);
+                }
             }
             else if (option == SNAKE)
             {
